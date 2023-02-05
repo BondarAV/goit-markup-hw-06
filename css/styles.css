@@ -6,6 +6,7 @@
     ---white-color: #FFFFFF;
     --main-background-color: #F4F4FD;
     --secondary-background-color: #E7E9FC;
+    --modal-background: #FCFCFC;
     --link-color: #8E8F99;
     --green-accent: #31D0AA;
 
@@ -166,7 +167,7 @@ body{
     box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 
-.benefits-section .hidden-title {
+.visually-hidden {
     position: absolute;
     width: 1px;
     height: 1px;
@@ -753,10 +754,15 @@ header .container {
     left: 50%;
     transform: translate(-50%, -50%);
 
-    width: 408px;
-    min-height: 576px;
+    padding-top: 72px;
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-bottom: 24px;
 
-    background: rgb(252, 252, 252);
+    width: 408px;
+    min-height: 584px;
+
+    background: var(--modal-background);
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
 
@@ -800,4 +806,216 @@ header .container {
     height: 8px;
 
     transition: fill var(--transition-time) var(--transition-effect);
+}
+
+.modal-title {
+    text-align: center;
+    font-weight: 500;
+    line-height: 1.5;
+    margin-bottom: 14px;
+}
+
+.label-wrap {
+    margin-bottom: 8px;
+}
+
+.textarea-wrap {
+    margin-bottom: 16px;
+}
+
+.modal .input,
+.modal .textarea {
+    width: 100%;
+    font-size: 12px;
+    background-color: transparent;
+    outline: none;
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+
+    transition: border-color var(--transition-time) var(--transition-effect);
+}
+
+.modal .input {
+    height: 40px;
+    padding-left: 38px;
+}
+
+.modal .textarea {
+    height: 120px;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 8px;
+    resize: none;
+}
+
+.modal .textarea::placeholder {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.04em;
+    
+    color: rgba(117, 117, 117, 0.5);
+}
+
+.modal .input:focus,
+.modal .textarea:focus {
+    border-color: var(--accent-color);
+}
+
+.modal .name {
+    display: inline-block;
+    margin-bottom: 4px;
+
+    font-size: 12px;
+    line-height: 1.33;
+    letter-spacing: 0.04em;
+
+    color: var(--link-color);
+}
+
+.modal .phone, 
+.modal .email,
+.modal .comment {
+    display: inline-block;
+    margin-bottom: 4px;
+
+    font-size: 12px;
+    line-height: 1.16;
+    letter-spacing: 0.01em;
+
+    color: var(--link-color);
+}
+
+.modal .input-wrap {
+    position: relative;
+}
+
+.modal .icon_person {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    transition: fill var(--transition-time) var(--transition-effect);
+}
+
+.modal .icon_phone {
+    position: absolute;
+    width: 18px;
+    height: 24px;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    transition: fill var(--transition-time) var(--transition-effect);
+}
+
+.modal .icon_email {
+    position: absolute;
+    width: 18px;
+    height: 24px;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    transition: fill var(--transition-time) var(--transition-effect);
+}
+
+.modal .input_name:focus + .icon_person {
+    fill: var(--accent-color);
+}
+
+.modal .input_tel:focus + .icon_phone {
+    fill: var(--accent-color);
+}
+
+.modal .input_email:focus + .icon_email {
+    fill: var(--accent-color);
+}
+
+.modal .checkbox-wrap {
+    margin-bottom: 24px;
+}
+
+.modal .custom-checkbox {
+    position: relative;
+    width: 16px;
+    height: 16px;
+    border: 1.25px solid var(--main-text-color);
+    border-radius: 2px;
+    background-color: transparent;
+
+    transition: background-color var(--transition-time) var(--transition-effect), border var(--transition-time) var(--transition-effect);
+}
+
+.privacy-policy-checkbox .icon {
+    position: absolute;
+    width: 10px;
+    height: 8px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    fill: transparent;
+
+    transition: fill var(--transition-time) var(--transition-effect);
+}
+
+.checkbox:checked + .privacy-policy-checkbox .custom-checkbox {
+    background-color: var(--dark-accent-color);
+    border: none;
+}
+
+.checkbox:checked + .privacy-policy-checkbox .icon {
+    fill: var(--main-background-color);
+}
+
+.modal .privacy-policy-checkbox {
+    display: flex;
+    font-size: 12px;
+    align-items: center;
+    gap: 8px;
+    line-height: 1.33;
+    letter-spacing: 0.04em;
+}
+
+.privacy-policy-checkbox .privacy-policy {
+    text-decoration: underline;
+    color: var(--accent-color);
+
+    transition: color var(--transition-time) var(--transition-effect);
+}
+
+.privacy-policy-checkbox .privacy-policy:hover,
+.privacy-policy-checkbox .privacy-policy:focus {
+    color: var(--dark-accent-color);
+}
+
+.modal .send-button {
+    display: block;
+    min-width: 169px;
+    height: 56px;
+    margin: 0 auto;
+    padding: 16px 32px;
+
+    background: var(--accent-color);
+    border: none;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.04em;
+    color: var(---white-color);
+
+    cursor: pointer;
+
+    transition: background-color var(--transition-time) var(--transition-effect), box-shadow var(--transition-time) var(--transition-effect);
+}
+
+.modal .send-button:hover,
+.modal .send-button:focus {
+    background-color: var(--dark-accent-color);
+    box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }

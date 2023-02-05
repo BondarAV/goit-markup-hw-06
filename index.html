@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Raleway:wght@800&family=Roboto:wght@400;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@800&family=Roboto:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
     <link
@@ -69,13 +69,13 @@
 
       <section class="benefits-section">
         <div class="container">
-          <h2 class="hidden-title">Benefits of our service</h2>
+          <h2 class="visually-hidden">Benefits of our service</h2>
 
           <ul class="list">
             <li class="item">
               <div class="element strategy">
                 <svg class="icon">
-                  <use xlink:href="./images/icons.svg#icon_strategy"></use>
+                  <use href="./images/icons.svg#icon_strategy"></use>
                 </svg>
               </div>
 
@@ -90,7 +90,7 @@
             <li class="item">
               <div class="element punctuality">
                 <svg class="icon">
-                  <use xlink:href="./images/icons.svg#icon_punctuality"></use>
+                  <use href="./images/icons.svg#icon_punctuality"></use>
                 </svg>
               </div>
 
@@ -105,7 +105,7 @@
             <li class="item">
               <div class="element diligence">
                 <svg class="icon">
-                  <use xlink:href="./images/icons.svg#icon_diligence"></use>
+                  <use href="./images/icons.svg#icon_diligence"></use>
                 </svg>
               </div>
 
@@ -530,6 +530,99 @@
             <use href="./images/icons.svg#icon_vector"></use>
           </svg>
         </button>
+
+        <p class="modal-title">Leave your contacts and we will call you back</p>
+
+        <form>
+          <div class="label-wrap">
+            <label class="label">
+              <span class="name">Name</span>
+
+              <div class="input-wrap">
+                <input
+                  class="input input_name"
+                  type="text"
+                  name="username"
+                  required
+                />
+                <svg class="icon_person">
+                  <use href="./images/icons.svg#icon_person"></use>
+                </svg>
+              </div>
+            </label>
+          </div>
+
+          <div class="label-wrap">
+            <label>
+              <span class="phone">Phone</span>
+
+              <div class="input-wrap">
+                <input
+                  class="input input_tel"
+                  type="tel"
+                  name="username"
+                  required
+                />
+                <svg class="icon_phone">
+                  <use href="./images/icons.svg#icon_phone"></use>
+                </svg>
+              </div>
+            </label>
+          </div>
+
+          <div class="label-wrap">
+            <label class="label">
+              <span class="email">Email</span>
+
+              <div class="input-wrap">
+                <input
+                  class="input input_email"
+                  type="email"
+                  name="username"
+                  required
+                />
+                <svg class="icon_email">
+                  <use href="./images/icons.svg#icon_email"></use>
+                </svg>
+              </div>
+            </label>
+          </div>
+
+          <div class="textarea-wrap">
+            <label>
+              <span class="comment">Comment</span>
+              <textarea
+                class="textarea"
+                name="comment"
+                placeholder="Text input"
+              ></textarea>
+            </label>
+          </div>
+
+          <div class="checkbox-wrap">
+            <input
+              class="checkbox visually-hidden"
+              type="checkbox"
+              id="privacy-policy"
+              name="privacy-policy"
+            />
+
+            <label class="privacy-policy-checkbox" for="privacy-policy"
+              ><div class="custom-checkbox">
+                <svg class="icon">
+                  <use href="./images/icons.svg#icon_check_mark"></use>
+                </svg>
+              </div>
+
+              <span>
+                I accept the terms and conditions of the
+                <a class="privacy-policy" href="#">Privacy Policy</a>
+              </span></label
+            >
+          </div>
+
+          <button class="send-button" type="submit">Send</button>
+        </form>
       </div>
     </div>
 
